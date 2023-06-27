@@ -3,9 +3,14 @@
 -- date:    06/25/2023
 
 
-  require ('config.keys')
-  require ('config.plugins')
-  require ('config.options')
+-- set space = <leader>
+vim.api.nvim_set_keymap('', '<Space>', '<Nop>', { noremap = true, silent = true })
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
+
+require ('config.plugins')
+require ('config.keys')
+require ('config.options')
 
 
 

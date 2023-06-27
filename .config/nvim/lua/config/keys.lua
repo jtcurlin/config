@@ -2,21 +2,24 @@
 -- author:  jacob curlin
 -- date:    06/25/2023
 
--- default options
-local opts = { noremap = true, silent = true }
+-- note : most keymaps currently managed by lazy ('keys')
 
--- alias keymap function
-local keymap = vim.api.nvim_set_keymap
+-- whichkey config
+local wk = require("which-key")
+local mappings = {
+	["<leader>"] = {
+		f = {
+		    name = "telescope",
+		    f = { "telescope : find files" },
+		    g = { "telescope : live grep" },
+		    b = { "telescope : buffers" },
+		    h = { "telescope : help tags" },
+		},
+	},
+}
+local opts = {}
+wk.register(mappings, opts)
 
--- set space = <leader>
-keymap("", "<Space>", "<Nop>", opts)
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
 
--- set 'kj' = esc (exit insert mode)
-vim.keymap.set("i", "kj", "<Esc>", {noremap = true})
-
--- set '<leader>q' to close all windows and exit neovim
-vim.keymap.set("n", "<leader>q", ":qa!<CR>", {})
 
 
