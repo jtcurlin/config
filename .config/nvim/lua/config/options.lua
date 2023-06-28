@@ -2,7 +2,8 @@
 -- author:  jacob curlin 
 -- date:    06/25/2023
 
--- current implementation sourced from:
+-- (TO UPDATE)
+-- current options config sourced from:
 -- https://github.com/ntk148v/neovim-config/blob/master/nvim/lua/config/options.lua
 
 local opt = vim.opt
@@ -12,7 +13,7 @@ local s = vim.s
 local indent = 4
 
 -- disable netrw for nvim-tree plugin
-g.loaded_netrw = 1          
+g.loaded_netrw = 1
 g.loaded_netrwPlugin = 1
 
 opt.backspace = {"eol", "start", "indent"} -- allow backspacing over everything in insert mode
