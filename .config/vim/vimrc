@@ -150,6 +150,8 @@ noremap <silent> <C-K> :<C-U>TmuxNavigateUp<cr>
 noremap <silent> <C-L> :<C-U>TmuxNavigateRight<cr>
 noremap <silent> <C-P> :<C-U>TmuxNavigatePrevious<cr>
 
+map <C-n> :NERDTreeToggle<CR>
+
 " open vim-powered terminal in split window
 map <Leader>t :term ++close<cr>
 tmap <Leader>t <c-w>:term ++close<cr>
@@ -194,15 +196,21 @@ set noshowmode
 
 " appearance ===================================================================================================== {{{
 
-" Enable True Colors
-if (has('termguicolors'))
+" gruvbox theme
+" autocmd vimenter * ++nested colorscheme gruvbox
+colorscheme gruvbox
+
+" dark background / appearance
+set bg=dark
+
+if (empty($TMUX) && getenv('TERM_PROGRAM') != 'Apple_Terminal')
+  if (has("nvim"))
+    let $NVIM_TUI_ENABLE_TRUE_COLOR=1"
+  endif
+  if (has("termguicolors"))
     set termguicolors
+  endif
 endif
-
-autocmd vimenter * ++nested colorscheme gruvbox
-
-
-" (appearance settings go here)
 
 " }}}
 
