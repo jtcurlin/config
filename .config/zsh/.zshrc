@@ -1,5 +1,5 @@
-# file:     zsh/.zshrc
-# author:   jacob curlin
+# jacob curlin 
+# updated 08/12/25
 
 # note: $ZDOTDIR is set in /etc/zshenv to redirect zsh startup to .config/zsh
 
@@ -10,24 +10,17 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# aliases
-source $HOME/.config/common/aliases.sh
-source $HOME/.config/common/env
+# bare git repo manages dotfiles
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 # set path
 export PATH="/usr/local/bin:$PATH"
 export PATH="/opt/homebrew/bin:$PATH"
 
-# configure pyenv
-# export PYENV_ROOT="$HOME/.config/.pyenv"
-# [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-# eval "$(pyenv init -)"
-
 # configure nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
 [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
-
 
 # [plugin] powerlevel10k custom prompt
 source $ZDOTDIR/plugins/powerlevel10k/powerlevel10k.zsh-theme
