@@ -22,6 +22,10 @@ let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc"
 " disable compatibility with vi which can cause unexpected issues.
 set nocompatible
 
+" system clipboard wihtin tmux on macos 
+set clipboard=unnamed
+
+
 " enable type file detection. Vim will be able to try to detect the type of
 " file in use.
 filetype on
@@ -45,10 +49,10 @@ set cursorcolumn
 set number
 
 " set shift width to 4 spaces
-set shiftwidth=2
+set shiftwidth=4
 
 " set tab width to 4 columns
-set tabstop=2
+set tabstop=4
 
 " use space characters instead of tabs
 set expandtab
@@ -121,6 +125,9 @@ Plug 'itchyny/lightline.vim'
 
 " gruvbox color scheme
 Plug 'morhetz/gruvbox'    
+
+" sonokai color scheme
+Plug 'sainnhe/sonokai'
 
 " nerdTree (w/ custom git plugin)
 Plug 'preservim/nerdtree' |
@@ -198,7 +205,8 @@ set noshowmode
 
 " gruvbox theme
 " autocmd vimenter * ++nested colorscheme gruvbox
-colorscheme gruvbox
+" colorscheme gruvbox
+colorscheme sonokai
 
 " dark background / appearance
 set bg=dark
