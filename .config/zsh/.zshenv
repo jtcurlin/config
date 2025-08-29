@@ -1,4 +1,4 @@
 # file:     zsh/.zshenv
 # author:   jacob curlin
 
-. "$HOME/.cargo/env"
+# . "$HOME/.cargo/env"

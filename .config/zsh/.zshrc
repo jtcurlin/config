@@ -15,12 +15,12 @@ alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 # set path
 export PATH="/usr/local/bin:$PATH"
-export PATH="/opt/homebrew/bin:$PATH"
+# export PATH="/opt/homebrew/bin:$PATH"
 
 # configure nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
-[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
+# [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
 
 # [plugin] powerlevel10k custom prompt
 source $ZDOTDIR/plugins/powerlevel10k/powerlevel10k.zsh-theme
